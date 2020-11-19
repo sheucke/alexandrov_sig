@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# activate conda env
-eval "$(conda shell.bash hook)"
-conda activate hrd
+
 
 # get input vcf files
 cd vcf_files
@@ -33,5 +31,5 @@ for i in ${VAR}
 
 
 # start python script
-#cd ..
-#python3 alexandrov_sig.py
+cd ..
+python3 alexandrov_sig.py
