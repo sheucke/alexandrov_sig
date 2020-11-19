@@ -1,0 +1,1 @@
+sudo docker run -v /mnt/c/Users/sebas/Heroku/Alexandrov/vcf_files:/vcf_files alexandrov
