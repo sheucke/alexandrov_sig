@@ -7,7 +7,7 @@ def main_function():
     # you can put the path to your folder containing the vcf     samples
     data = "./vcf_files"
     sig.sigProfilerExtractor("vcf", "alexandrov_results",
-                             data, minimum_signatures=1, maximum_signatures=3)
+                             data, minimum_signatures=1, maximum_signatures=10, nmf_replicates=100)
 
 
 if __name__ == "__main__":

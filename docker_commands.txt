@@ -1,0 +1,10 @@
+#create docker image
+docker build -t alexandrov .
+
+#run docker image with local folder
+docker run -v /mnt/c/Users/sebas/Heroku/Alexandrov/vcf_files:/vcf_files alexandrov
+
+
+# push image to docker hub
+docker tag local-image:tagname new-repo:tagname
+docker push new-repo:tagname

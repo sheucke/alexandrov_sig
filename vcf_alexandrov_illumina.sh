@@ -1,6 +1,8 @@
 #!/bin/bash
 
-
+# activate conda env
+eval "$(conda shell.bash hook)"
+conda activate hrd
 
 # get input vcf files
 cd vcf_files
@@ -30,10 +32,10 @@ for i in ${VAR}
     awk '$3 == "PASS"' ${i}_filtered.txt > ${i}
     rm *.txt
     rm -r ../unziped
+
   done
 
 
 # start python script
-cd ..
-python3 alexandrov_sig.py
-cp -r alexandrov_results/ vcf_files/
+#cd ..
+#python3 alexandrov_sig.py
