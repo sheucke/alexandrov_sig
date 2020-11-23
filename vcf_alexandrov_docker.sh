@@ -18,6 +18,7 @@ for f in *.gz; do
   rm ${STEM}.gz
 done
 
+
 # get names of vcf files to convert 
 VAR=$(ls ../unziped)
 
@@ -28,10 +29,11 @@ for i in ${VAR}
     awk -F'\t' -vcols=#CHROM,POS,FILTER,REF,ALT '(NR==1){n=split(cols,cs,",");for(c=1;c<=n;c++){for(i=1;i<=NF;i++)if($(i)==cs[c])ci[c]=i}}{for(i=1;i<=n;i++)printf "%s" FS,$(ci[i]);printf "\n"}' ${i}_vcf_removed_header.txt  > ${i}.txt
     awk '$5 !~ /^[.]/' ${i}.txt > ${i}_filtered.txt
     awk '$3 == "PASS"' ${i}_filtered.txt > ${i}
-    rm *.txt
-    rm -r ../unziped
+    
   done
-
+  
+rm *.txt
+rm -r ../unziped
 
 # start python script
 cd ..
